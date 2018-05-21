@@ -736,9 +736,14 @@
       },
 
       selectOption() {
-        if (!this.visible) {
-          this.toggleMenu();
-        } else {
+        // if (!this.visible) {
+        //   this.toggleMenu();
+        // } else {
+        //  if (this.options[this.hoverIndex]) {
+        //    this.handleOptionSelect(this.options[this.hoverIndex]);
+        //  }
+        // }
+        if (this.visible) {
           if (this.options[this.hoverIndex]) {
             this.handleOptionSelect(this.options[this.hoverIndex]);
           }

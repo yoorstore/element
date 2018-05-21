@@ -1,6 +1,6 @@
 {
   "name": "element-ui",
-  "version": "2.3.7",
+  "version": "2018102.3.7",
   "description": "A Component Library for Vue.js.",
   "main": "lib/element-ui.common.js",
   "files": [
@@ -9,6 +9,7 @@
     "packages",
     "types"
   ],
+  "privatePackages": ["element-ui"],
   "typings": "types/index.d.ts",
   "scripts": {
     "bootstrap": "yarn || npm i",
