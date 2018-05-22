@@ -295,6 +295,10 @@
       popperAppendToBody: {
         type: Boolean,
         default: true
+      },
+      enterVisible: {
+        type: Boolean,
+        default: true
       }
     },
 
@@ -736,16 +740,20 @@
       },
 
       selectOption() {
-        // if (!this.visible) {
-        //   this.toggleMenu();
-        // } else {
-        //  if (this.options[this.hoverIndex]) {
-        //    this.handleOptionSelect(this.options[this.hoverIndex]);
-        //  }
-        // }
-        if (this.visible) {
-          if (this.options[this.hoverIndex]) {
-            this.handleOptionSelect(this.options[this.hoverIndex]);
+        // 2018-05-22 enterVisible 未展开时回车事件不触发显示。
+        if (this.enterVisible) {
+          if (!this.visible) {
+            this.toggleMenu();
+          } else {
+            if (this.options[this.hoverIndex]) {
+              this.handleOptionSelect(this.options[this.hoverIndex]);
+            }
+          }
+        } else {
+          if (this.visible) {
+            if (this.options[this.hoverIndex]) {
+              this.handleOptionSelect(this.options[this.hoverIndex]);
+            }
           }
         }
       },
