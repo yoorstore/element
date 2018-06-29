@@ -163,7 +163,9 @@
       currentInputValue() {
         const currentValue = this.currentValue;
         if (typeof currentValue === 'number' && this.precision !== undefined) {
-          return currentValue.toFixed(this.precision);
+          // 2018-06-29 小数位 改版
+          // return currentValue.toFixed(this.precision);
+          return parseFloat(currentValue.toFixed(this.precision));
         } else {
           return currentValue;
         }
