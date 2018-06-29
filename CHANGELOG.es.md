@@ -1,13 +1,98 @@
 ## Changelog
 
+### 2.4.1
+
+*2018-06-08*
+
+- Removed Autocomplete's duplicate type declaration, #11388
+- Fixed Select's dropdown arrow style in FireFox when nested in Form, #11427
+- Fixed clear icon of Select still showing when the initial value is `null`, #11460
+- Fixed disabled radio showing box-shadow when clicked, #11462
+- Added `iconClass` attribute for MessageBox, #11499
+- Added `stretch` attribute for Tabs, #11476
+- Fixed rendering order issue of TabPane when Tabs is `lazy`, #11461
+- Fixed Table not retaining current highlight row when expanded, #11464
+- Fixed focusing state when `before-leave` returns a resolved promise, #11386
+- Fixed disabled Popover still creating poppers, #11426
+- Fixed Tree's endless loop when a new node is added in lazy mode, #11430 (by @wangjingf)
+- Added `closed` event for Dialog, #11490
+
+### 2.4.0 Fullerene
+
+*2018-05-28*
+
+#### Nuevas características
+- Generalidades
+  - La herramienta de desarrollo y el empaquetador se cambiaron a webpack nativo, #11216
+  - Ahora puede configurar globalmente el z-index inicial de los popups, #11257
+- Autocomplete
+  - Añadido el atributo `hide-loading`, #11260
+- Button
+  - Ahora se puede usar el atributo `size` en los botones circulares para controlar sus tamaños, #11275
+- InputNumber
+  - Añadido el atributo `precision`, #11281
+- Tabs
+  - Añadido el atributo `before-leave`, #11259
+  - Añadido el atributo `lazy`, #11167（by @Kingwl）
+- Table
+  - Añadido el método `sort` para ordenar manualmente la tabla, #11311
+
+#### Corrección de errores
+- Input
+  - Se ha corregido un problema que provocaba que se volviera a procesar al utilizar el IME chino para introducir texto rápidamente, #11235 (por @STLighter).
+- Popover
+  - Corregido el error de la consola cuando el elemento disparador es Radio o Checkbox, #11265
+- Breadcrumb
+  - Arreglado el atributo `to` que no soportaba la actualización dinámica, #11286
+- Upload
+  - Corregido el error de la consola cuando se resolvia el Archivo en la Promesa devuelta del método `beforeUpload`, #11297 (por @qusiba)
+- Tooltip
+  - Solucionado que la flecha no se  posicionaba correctamente cuando el contenido estaba vacío, #11335
+- Autocompletar
+  - Corregido que  las sugerencias de entrada eran  incorrectas después de eliminar la palabra clave rápidamente, #11323
+- ColorPicker
+  - Corregido el evento `active-change` que se disparaba incorrectamente cuando el menú desplegable del picker estaba cerrado, #11304
+- Table
+  - Corregido el error de estilo del panel de filtro cuando se sobredimensionaba, #11314
+  - Corregida que la fila seleccionada actualmente no se retenia cuando se ordenaba la tabla, #11348
+- CheckBox
+  - Arreglado que cuando el checkbox era único no soportaba validación, #11271
+- Radio
+  - Arreglado que el Radio desactivado seguia estando seleccionada cuando se pulsaba la tecla espaciadora, #11303
+- MessageBox
+  - Corregida la clase `el-popup-parent--hidden` que no se eliminaba al abrir MessageBox sucesivamente, #11371
+
+### 2.3.9
+
+*2018-05-18*
+
+- Corregido que cuando los datos de origen no tenian el campo especificado por el atributo `prop` de una TableColumn, se producía un error al moverse el ratón dentro de las celdas de esa columna, #11137.
+- El atributo `lockScroll` de los componentes pop-up ya no añade un inline style al elemento padre, sino que añade un nombre de clase, #1111114.
+- Arreglado el icono de Progreso que no se mostraba cuando su `status` era `exception`, #11172
+- El atributo `disabled` no funcionaba en la lista de resultados del filtro de Cascader, #11185
+- Se ha corregido un problema por el que la fila expandida de la Tabla no se podía contraer si los datos de origen se actualizaban después de su expansión, #11186.
+- `setCurrentKey` de Tree ahora acepta `null` como parámetro para cancelar el nodo actualmente resaltado, #11205
+
+### 2.3.8
+
+*2018-05-11*
+
+- Corregido que el panel DatePicker saltaba al mes actual después de escoger una fecha en un mes diferente cuando el tipo era `dates`, #10973
+- Arreglado que el `clearable Input` seguía mostrando el icono de borrado cuando era sólo de lectura, #10912
+- Arreglado que al cerrar el panel DatePicker sin modificar el valor se desencadenaba incorrectamente el evento `change`, #11017
+- Arreglado que la navegación por el teclado no funcionaba correctamente cuando Select tenia opciones agrupadas, #11058
+- Agregado el `slot named` `prefix` para Select, #11063
+- Agregado  el metodo `clearValidate` para FormItem, #11076
+- Agregado el atributo `checkOnClickNode` para Tree, #11111
+
 ### 2.3.7
 
 *2018-04-29*
 
-- Fixed Table not updating its header widths when the scroll bar disappears due to filtering, #10834
-- Fixed clearable Input still showing the clear icon when its initial value is `null`, #10912
-- Fixed incorrect trigger of the `active-change` event after changing ColorPicker's binding value programatically, #10903 (by @zhangbobell)
-- Fixed filterable Select causing an infinite loop when navigating options using keyboard if all options are disabled, #10945
+- Corregido que Table no actualizaba el ancho de encabezado cuando la barra de desplazamiento desaparecia debido al filtrado, #10834
+- Corregido input borrable que mostraba el icono de borrado cuando su valor inicial era `nulo`, #10912
+- Corregido el disparador incorrecto del evento `active-change` después de cambiar el valor enlazado de ColorPicker programáticamente, #10903 (por @zhangbobell)
+- Corregido filterable Select que causaba un bucle infinito al navegar por las opciones usando el teclado si todas las opciones estában deshabilitadas, #10945
 
 ### 2.3.6
 

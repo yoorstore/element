@@ -1,5 +1,90 @@
 ## 更新日志
 
+### 2.4.1
+
+*2018-06-08*
+
+- 移除 Autocomplete 的重复类型声明，#11388
+- 修复嵌套在 Form 内的 Select 在 FireFox 浏览器中下拉箭头错位的问题，#11427
+- 修复 Select 的初始值为 `null` 时仍然显示清除图标的问题，#11460
+- 修复禁用的 Radio 在点击时显示 box-shadow 的问题，#11462
+- 新增 MessageBox 的 `iconClass` 属性，#11499
+- 新增 Tabs 的 `stretch` 属性，#11476
+- 修复 Tabs 开启 `lazy` 时渲染顺序异常的问题，#11461
+- 修复 Table 展开行时无法保留选中行样式的问题，#11464
+- 修复 Tabs 调用 `before-leave` 并返回 Promise 的时候，Tabs 会存在 focus 状态的问题，#11386
+- 修复 Popover 禁用状态下创建弹出框的问题，#11426
+- 修复 Tree 在懒加载状态下添加新节点造成无限循环的问题，#11430 （by @wangjingf）
+- 新增 Dialog 的 `closed` 事件，#11490
+
+### 2.4.0 Fullerene
+
+*2018-05-28*
+
+#### 新特性
+- 综合
+  - 使用原生 webpack 作为构建和打包工具，#11216
+  - 可以全局配置弹出层的初始 z-index，#11257
+- Autocomplete
+  - 新增 `hide-loading` 属性，#11260
+- Button
+  - 现在圆形按钮也支持通过 `size` 属性改变其尺寸了，#11275
+- InputNumber
+  - 新增 `precision` 属性，#11281
+- Tabs
+  - 新增 `before-leave` 钩子，#11259
+  - 新增 `lazy` 属性，#11167（by @Kingwl）
+- Table
+  - 新增 `sort` 方法，支持手动排序，#11311
+
+#### 修复
+- Input
+  - 修复使用中文输入法快速输入文字时会导致视图重新渲染的问题，#11235（by @STLighter）
+- Popover
+  - 修复当触发元素为 Radio 或 Checkbox 时控制台报错的问题，#11265
+- Breadcrumb
+  - 修复 `to` 属性不支持动态更新的问题，#11286
+- Upload
+  - 修复在 `beforeUpload` 方法返回的 Promise 中 resolve 一个 File 时控制台报错的问题，#11297（by @qusiba）
+- Tooltip
+  - 修复内容为空时箭头错位的问题，#11335
+- Autocomplete
+  - 修复在快速删除搜索内容后输入建议不正确的问题，#11323
+- ColorPicker
+  - 修复关闭选色器时触发 `active-change` 事件的问题，#11304
+- Table
+  - 修复筛选列表过长导致样式超出的问题，#11314
+  - 修复排序后导致无法正常显示选中行样式的问题，#11348
+- Checkbox
+  - 修复单个 Checkbox 不支持表单验证的问题，#11271
+- Radio
+  - 修复通过空格可以选中被禁用的 Radio 的问题，#11303
+- MessageBox
+  - 修复连续打开两个 MessageBox 时 `el-popup-parent--hidden` 无法移除的问题，#11371
+
+### 2.3.9
+
+*2018-05-18*
+
+- 修复当 TableColumn 的 `prop` 属性指定的字段在数据源中不存在时，鼠标移入该列单元格会报错的问题，#11137
+- 弹出类组件的 `lockScroll` 属性不再为父元素添加内联样式，而是添加相应类名，#11114
+- 修复 Progress 在 `status` 为 exception 时图标不显示的问题，#11172
+- 修复可搜索的 Cascader 在输入关键词后，选项的 `disabled` 属性失效的问题，#11185
+- 修复可展开的 Table 在展开某一行后更新数据源会造成该行无法收起的问题，#11186
+- Tree 的 `setCurrentKey` 方法支持传入 `null`，可取消当前高亮的节点，#11205
+
+### 2.3.8
+
+*2018-05-11*
+
+- 修复 `type` 为 dates 的 DatePicker 在选择非当前月的日期后，面板会跳转至当前月的问题，#10973
+- 修复可清空的只读 Input 仍会显示清空图标的问题，#10912
+- 修复范围选择的 DatePicker 在未改变值的情况下关闭下拉面板仍会触发 `change` 事件的问题，#11017
+- 修复 Select 在有分组选项时不能正确通过键盘导航的问题，#11058
+- 新增 Select 的 `prefix` 具名 slot，#11063
+- 新增 FormItem 的 `clearValidate` 方法，#11076
+- 新增 Tree 的 `checkOnClickNode` 属性，#11111
+
 ### 2.3.7
 
 *2018-04-29*
